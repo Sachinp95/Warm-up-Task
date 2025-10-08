@@ -1,0 +1,149 @@
+/* General body styling with background image */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-image: url('https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+/* Adds a dark overlay to the background for better text readability, as seen in the image */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Main container for all content */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Main heading style */
+.main-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Subtitle paragraph style */
+.subtitle {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Container for the team cards, using flexbox for alignment */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
+    margin-bottom: 3rem;
+}
+
+/* Individual team member card styling */
+.team-card {
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Circular profile image styling */
+.team-card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+/* Member name styling */
+.member-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #3f3d7c;
+    margin: 0 0 0.5rem 0;
+}
+
+/* Social links section styling */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #adb5bd;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3f3d7c;
+}
+        
+/* "View Our Team" button style */
+.view-team-button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.view-team-button:hover {
+    background-color: #ffffff;
+    color: #3f3d7c;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 1024px) {
+    .team-grid {
+        gap: 1.5rem;
+    }
+    .team-card {
+        max-width: 280px;
+    }
+}
+        
+@media (max-width: 920px) {
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+ 
